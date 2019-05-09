@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SampleAndroidGooglePay</string>
+
+    <string name="amount_hint">Amount</string>
+    <string name="email_hint">Email</string>
+    <string name="order_hint">Order ID</string>
+
+    <string name="pay_btn_text">Pay with Google Pay</string>
+</resources>
