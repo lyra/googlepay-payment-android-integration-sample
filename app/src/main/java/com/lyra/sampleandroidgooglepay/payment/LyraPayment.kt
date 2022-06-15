@@ -153,7 +153,7 @@ object LyraPayment {
      */
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     fun executeTransaction(googlePayData: String, activity: Activity) {
-        doAsync {
+        DoAsync {
             try {
                 // Payload payment part
                 val lyraPayload = JSONObject()
@@ -277,7 +277,8 @@ object LyraPayment {
      * @property handler Function0<Unit>
      * @constructor
      */
-    class doAsync(val handler: () -> Unit) : AsyncTask<Void, Void, Void>() {
+    class DoAsync(val handler: () -> Unit) : AsyncTask<Void, Void, Void>() {
+        @Deprecated("Deprecated in Java")
         override fun doInBackground(vararg params: Void?): Void? {
             handler()
             return null

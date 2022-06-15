@@ -1,60 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:indeterminate="true" />
+            android:indeterminate="true"
+            android:visibility="gone" />
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="9dp"
         android:orientation="vertical"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_height="wrap_content">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout">
 
         <EditText
+            android:id="@+id/amountText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/amount_hint"
             android:digits="0123456789.,"
-            android:inputType="numberDecimal"
-            android:id="@+id/amountText"/>
+            android:hint="@string/amount_hint"
+            android:inputType="numberDecimal" />
 
         <EditText
-            android:inputType="textEmailAddress"
+            android:id="@+id/emailText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email_hint"
-            android:id="@+id/emailText"/>
+            android:inputType="textEmailAddress" />
 
         <EditText
-            android:inputType="text"
+            android:id="@+id/orderText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/order_hint"
-            android:id="@+id/orderText"/>
+            android:inputType="text" />
 
         <Button
+            android:id="@+id/payBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/payBtn"
-            android:text="@string/pay_btn_text"
+            android:layout_gravity="center"
             android:onClick="onPayClick"
-            android:visibility="gone"
-            android:layout_gravity="center"/>
+            android:text="@string/pay_btn_text"
+            android:visibility="gone" />
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
